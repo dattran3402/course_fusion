@@ -1,0 +1,1 @@
+docker exec -it postgresql bash -c 'psql -U postgres -d vector -c "CREATE EXTENSION vector;"'

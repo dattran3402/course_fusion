@@ -1,0 +1,31 @@
+.modal__verify-email {
+    .text__verify-email {
+        font-family: "Noto Sans JP";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 40px;
+        /* identical to box height, or 143% */
+
+        text-align: center;
+
+        /* Primary_Color/Primary - color */
+
+        color: #0b318f;
+    }
+}
+@media screen and (max-width: 959px) {
+    .modal__content {
+        margin: 0 16px;
+    }
+}
+
+.verify__email-container {
+    .btn__verify-email {
+        background-color: #2ea7e0 !important;
+        border-radius: 6px;
+    }
+    .btn__verify-email:hover {
+        background-color: #2480aa !important;
+    }
+}

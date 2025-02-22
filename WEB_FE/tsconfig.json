@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@common/*": ["./src/components/common/*"],
+      "@components/*": ["./src/components/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@scss/*": ["./src/scss/*"],
+      "@service/*": ["src/api/*"],
+      "@types/*": ["./src/types/*"],
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@layouts/*": ["src/components/layouts/*"],
+      "@pages/*": ["src/components/pages/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

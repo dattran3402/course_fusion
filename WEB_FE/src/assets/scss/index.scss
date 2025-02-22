@@ -1,0 +1,30 @@
+// SETTINGS
+@import "setting/core";
+
+// COMPONENTS
+@import "component/app";
+@import "component/loading";
+@import "component/modal";
+@import "component/home";
+@import "component/chat";
+@import "component/checkbox";
+@import "component/forgotPassword";
+@import "component/pagination";
+@import "component/header";
+@import "component/chakra";
+@import "component/verifyemail";
+@import "component/register";
+@import "component/popup";
+@import "component/progress";
+@import "component/introduce";
+@import "component/payment";
+@import "component/tableShared";
+
+
+// GENERICS
+@import "generic/reset";
+@import "generic/button";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

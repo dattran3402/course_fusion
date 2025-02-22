@@ -1,0 +1,17 @@
+.pagination {
+  nav ul li {
+    button {
+      color: $color-dark-blue;
+    }
+
+    .Mui-selected {
+      background-color: #de3c42;
+      color: #fff;
+    }
+  }
+}
+
+.chakra-tabs__tablist button[aria-selected=true] {
+  --tabs-color: #de3c42 !important;
+  border-color: #de3c42 !important;
+}

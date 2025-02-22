@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Course" ADD COLUMN     "totalReview" DOUBLE PRECISION DEFAULT 0,
+ADD COLUMN     "totalReviewStar" DOUBLE PRECISION,
+ADD COLUMN     "totalStudents" INTEGER DEFAULT 0;

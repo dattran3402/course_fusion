@@ -1,0 +1,76 @@
+.ReactModal__Overlay {
+  // background-color: transparent !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  .ReactModal__Content {
+    inset: 50px !important;
+    transform: translateY(200px);
+    transition: transform 0.5s ease-in-out;
+    box-shadow: -5px -5px 10px #0591ff1a;
+  }
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+
+  .ReactModal__Content--after-open {
+    transform: translateY(0px);
+  }
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+
+  .ReactModal__Content--before-close {
+    transform: translateY(200px);
+  }
+}
+
+
+.chakra-modal__content-container {
+  z-index: var(--chakra-zIndices-modal);
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  overflow: auto;
+  overscroll-behavior-y: none;
+}
+
+.chakra-portal {
+  .chakra-modal__overlay {
+    z-index: 3;
+  }
+  .zIndex-50{
+    z-index: 50 !important;
+  }
+  .rename-chat{
+    width: 684px !important;
+    padding: 24px 100px
+  }
+  .css-onkibi {
+    width: 0.9em !important;
+    color: #999;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .chakra-portal {
+    .rename-chat {
+      width: 90% !important;
+      min-width: 350px !important;
+      padding: 16px
+    }
+    .delete-chat {
+      width: 90% !important;
+      min-width: 350px !important;
+      padding: 24px 0;
+    }
+    .logout-modal {
+      width: 90% !important;
+      min-width: 300px !important;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+#payment-form {
+  width: 30vw;
+  min-width: 600px;
+  align-self: center;
+  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  padding: 40px;
+  background-color: white;
+}
+
+.button-checkout {
+  background: #029A2A;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+
+  &:hover {
+    background: #029A2A;
+  }
+
+  &:active {
+    background: #029A2A;
+  }
+
+  &:disabled {
+    background: #d8deed;
+    cursor: default;
+  }
+}
+
+/* spinner/processing state, errors */
+@keyframes ldio-isfx29urir {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ldio-isfx29urir div {
+  box-sizing: border-box !important;
+}
+.ldio-isfx29urir > div {
+  position: absolute;
+  width: 91px;
+  height: 91px;
+  top: 4.5px;
+  left: 4.5px;
+  border-radius: 50%;
+  border: 11px solid #000;
+  border-color: #ffffff transparent #ffffff transparent;
+  animation: ldio-isfx29urir 1s linear infinite;
+}
+.ldio-isfx29urir > div:nth-child(2) {
+  border-color: transparent;
+}
+.ldio-isfx29urir > div:nth-child(2) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.ldio-isfx29urir > div:nth-child(2) div:before,
+.ldio-isfx29urir > div:nth-child(2) div:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: -11px;
+  left: 29px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 80px 0 0 #ffffff;
+}
+.ldio-isfx29urir > div:nth-child(2) div:after {
+  left: -11px;
+  top: 29px;
+  box-shadow: 80px 0 0 0 #ffffff;
+}
+.loadingio-spinner-dual-ring-lscotdtg56 {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  background: rgba(221, 221, 221, 0);
+}
+.ldio-isfx29urir {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.2);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-isfx29urir div {
+  box-sizing: content-box;
+}
+
+@media only screen and (max-width: 600px) {
+  #payment-form {
+    width: 80vw;
+    min-width: initial;
+  }
+}
+
+.Label {
+  margin-bottom: var(--p-spacing1);
+  font-size: var(--fontSizeSm);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  color: #30313d;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.p-Fade {
+  --p-fadeEnterDuration: 0.4s;
+  --p-fadeEnterDelay: 0s;
+  --p-fadeExitDuration: 0.2s;
+  --p-fadeExitDelay: 0s;
+}
+
+.p-FieldLabel {
+  display: block;
+}
+
+.p-Animatable .p-LinkAuth--input {
+  transition: height 0.34s ease, opacity 0.4s ease 0.2s, background 0.15s ease,
+    border 0.15s ease, box-shadow 0.15s ease, color 0.15s ease !important;
+}
+
+.Input,
+.p-FauxInput {
+  border-radius: var(--borderRadius);
+  transition: background 0.15s ease, border 0.15s ease, box-shadow 0.15s ease,
+    color 0.15s ease;
+  border: 1px solid var(--p-colorBackgroundDeemphasize10);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02);
+}
+
+.p-LinkAuth {
+  background: #E1E8FC;
+  overflow: hidden;
+  padding: 0 !important;
+  position: relative;
+}
+
+.p-HeightObserver--delayIncrease {
+  --p-heightObserverTransitionDelay: var(
+    --p-outerFrameHeightIncreaseTransitionDelay
+  );
+}
+
+.p-HeightObserver {
+  --p-heightObserverTransitionDuration: var(
+    --p-outerFrameHeightTransitionDuration
+  );
+  --p-heightObserverTransitionDelay: 0s;
+  box-sizing: content-box;
+}
+
+.p-Animatable .p-LinkInputWrapper {
+  transition: width 0.3s ease 0.2s;
+}
+
+.p-LinkInputWrapper {
+  width: 100%;
+}
+
+.Input,
+.p-FauxInput {
+  padding: 10.21px 12px;
+  border-radius: var(--borderRadius);
+  transition: background 0.15s ease, border 0.15s ease, box-shadow 0.15s ease,
+    color 0.15s ease;
+  border: 1px solid var(--p-colorBackgroundDeemphasize10);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(0, 0, 0, 0.02);
+}
+
+.p-LinkInput {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.p-Input-input {
+  display: block;
+  width: 100%;
+  color: rgb(48, 49, 61);
+}
+
+.Field-emailInput {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

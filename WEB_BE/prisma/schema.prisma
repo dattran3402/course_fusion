@@ -1,0 +1,265 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String    @id @default(uuid())
+  name               String
+  email              String    @unique
+  password           String
+  isBlocked          Boolean?
+  role               String?
+  avatarFileId       String?
+  accessToken        String?
+  refreshToken       String?
+  verifyCode         String?
+  lastLogin          DateTime?
+  headline           String?
+  biography          String?
+  website            String?
+  twitter            String?
+  facebook           String?
+  linkedIn           String?
+  youtube            String?
+  favouriteCourseIds Json?
+
+  // teacher attributes
+  stripeCustomerId String?
+  lastChargeMoney  DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Course {
+  id                        String   @id @default(uuid())
+  name                      String
+  price                     Int
+  teacherId                 String
+  backgroundFileId          String?
+  promoVideoFileId          String?
+  configuration             Json?
+  tags                      Json?
+  status                    String
+  description               String?
+  subtitle                  String?
+  whatWillLearn             String?
+  requirements              String?
+  whoThisCourseFor          String?
+  totalReview               Int?     @default(0)
+  totalReviewStar           Int?     @default(0)
+  totalStudents             Int?     @default(0)
+  requiresSequentialViewing Boolean? @default(false)
+  percentToViewNext         Int?     @default(60)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Section {
+  id              String    @id @default(uuid())
+  name            String
+  description     String?
+  order           Int
+  type            String
+  openDate        DateTime?
+  dueDate         DateTime?
+  courseId        String
+  parentSectionId String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model CourseStudent {
+  id                  String    @default(uuid())
+  courseId            String
+  studentId           String
+  price               Int?
+  chatbotInstructions String?
+  chatbotDocumentIds  Json?
+  finishedDate        DateTime?
+  reviewStar          Int?      @default(-1)
+  reviewContent       String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@id([courseId, studentId])
+}
+
+model Notification {
+  id       String  @id @default(uuid())
+  content  String
+  userId   String
+  link     String
+  isViewed Boolean @default(false)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model SectionComment {
+  id              String  @id @default(uuid())
+  sectionId       String
+  parentCommentId String?
+  userId          String
+  content         String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model SectionStudent {
+  id              String @id @default(uuid())
+  sectionId       String
+  studentId       String
+  progressPercent Int    @default(0)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Document {
+  id       String @id @default(uuid())
+  name     String
+  size     Int
+  type     String
+  duration Float? @default(0)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model DocumentSection {
+  documentId String
+  sectionId  String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@id([documentId, sectionId])
+}
+
+model DocumentAssignment {
+  documentId   String
+  assignmentId String
+  userId       String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@id([documentId, assignmentId, userId])
+}
+
+model AssignmentStudent {
+  id           String @id @default(uuid())
+  assignmentId String
+  userId       String
+  grade        Int?
+  status       String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model QuizQuestion {
+  id        String  @id @default(uuid())
+  type      String
+  question  String
+  answer    String
+  options   Json?
+  courseId  String?
+  sectionId String?
+  tags      Json?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model QuizConfiguration {
+  sectionId     String @id
+  configuration Json?
+  minutes       Int?
+  questionIds   Json?
+  percentToPass Int?   @default(0)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model QuizQuestionSection {
+  sectionId      String
+  quizQuestionId String
+  order          Int?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@id([sectionId, quizQuestionId])
+}
+
+model QuizQuestionStudent {
+  id             String   @id @default(uuid())
+  quizQuestionId String
+  sectionId      String
+  studentId      String
+  answer         String?
+  status         Boolean?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model QuizStudent {
+  sectionId   String
+  studentId   String
+  questionIds Json?
+  correct     Int?
+  total       Int?
+  startTime   DateTime?
+  endTime     DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@id([sectionId, studentId])
+}
+
+model Message {
+  id       String @id @default(uuid())
+  userId   String
+  courseId String
+  data     Json?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}

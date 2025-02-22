@@ -1,0 +1,12 @@
+@media screen and (max-width: 767px) {
+  .table_shared {
+    position: unset !important;
+  }
+  .chakra-tabs__tablist {
+    width: 100% !important;
+  }
+  .table_business {
+    gap: 10px;
+    margin-top: 10px;
+  }
+}

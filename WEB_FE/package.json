@@ -1,0 +1,146 @@
+{
+  "name": "octabio",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 8789",
+    "build:css": "npx run postcss src/scss/index.scss -o public/index.css",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "test": "jest --detectOpenHandles",
+    "prod": "npm run build && npx serve -l 4000 -s build",
+    "dev": "npm run start"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "@atlaskit/atlassian-navigation": "^2.9.1",
+    "@atlaskit/avatar": "^21.4.2",
+    "@atlaskit/breadcrumbs": "^12.0.2",
+    "@atlaskit/button": "^16.15.0",
+    "@atlaskit/checkbox": "^13.0.1",
+    "@atlaskit/css-reset": "^6.6.1",
+    "@atlaskit/docs": "^9.1.2",
+    "@atlaskit/dropdown-menu": "^12.1.7",
+    "@atlaskit/dynamic-table": "^14.11.10",
+    "@atlaskit/form": "^9.0.1",
+    "@atlaskit/icon": "^21.12.8",
+    "@atlaskit/inline-edit": "^13.0.2",
+    "@atlaskit/inline-message": "^12.2.6",
+    "@atlaskit/link-provider": "^1.6.12",
+    "@atlaskit/logo": "^13.14.9",
+    "@atlaskit/modal-dialog": "^12.9.1",
+    "@atlaskit/notification-indicator": "^9.1.5",
+    "@atlaskit/page-header": "^10.4.4",
+    "@atlaskit/page-layout": "^1.8.3",
+    "@atlaskit/radio": "^6.0.1",
+    "@atlaskit/renderer": "^108.17.2",
+    "@atlaskit/select": "^17.0.1",
+    "@atlaskit/side-navigation": "^3.0.1",
+    "@atlaskit/table-tree": "^9.6.8",
+    "@atlaskit/textarea": "^5.4.0",
+    "@atlaskit/textfield": "^6.0.0",
+    "@atlaskit/toggle": "^13.1.0",
+    "@emotion/react": "^11.11.3",
+    "@faker-js/faker": "^8.4.1",
+    "@mui/material": "^5.15.2",
+    "@mui/x-date-pickers": "^6.18.6",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@stripe/react-stripe-js": "^2.1.1",
+    "@stripe/stripe-js": "^1.54.2",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.24",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "antd": "^5.12.2",
+    "axios": "^1.3.6",
+    "chart.js": "^4.4.2",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.0.3",
+    "faker": "^6.6.6",
+    "js-cookie": "^3.0.5",
+    "moment": "^2.29.4",
+    "pdf-lib": "^1.3.1",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-pdf": "^9.0.0",
+    "react-player": "^2.14.1",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.1",
+    "react-scrollable-feed": "^1.3.2",
+    "socket.io-client": "^4.7.5",
+    "stripe": "^14.24.0",
+    "styled-components": "^6.1.8",
+    "typescript": "*",
+    "uuid": "^9.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-modal": "^3.16.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "jest": "^29.7.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prop-types": "^15.8.1",
+    "sass": "^1.62.0",
+    "tailwindcss": "^3.3.2",
+    "ts-jest": "^29.1.2",
+    "vite": "^4.3.5",
+    "webpack": "^5.82.1"
+  }
+}
